@@ -1,7 +1,8 @@
 package br.com.praticando.screenmatch.calculos;
 
-public class Classicavel
-{
+public interface Classificavel {
+    int getClassificacao();
+
 
 
 }

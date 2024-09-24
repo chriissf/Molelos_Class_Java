@@ -1,38 +1,27 @@
-public class Filme {
+package br.com.praticando.scrreenmatch.modelos;
 
-    String nome;
-    int anoDeLancamento;
-    boolean incluidoNoPlano;
-    private double somaDasAvaliacoes;
-    private int totalDeAvaliacoes;
-    int duracaoEmMinutos;
+import br.com.praticando.screenmatch.calculos.Classificavel;
 
+public class Filme extends Titulo implements Classificavel {
 
-    int getTotalDeAvaliacoes(){
+    private String diretor;
 
-        return totalDeAvaliacoes;
+    public String getDiretor() {
+        return diretor;
     }
 
-
-    void exibeFichaTecnica() {
-
-        System.out.println("Nome do filme: " + nome);
-        System.out.println("Ano de lançamento: " + anoDeLancamento);
-        System.out.println("Tempo de duração: " + duracaoEmMinutos);
-
+    public void setDiretor(String diretor) {
+        this.diretor = diretor;
     }
 
-    void avalia(double nota) {
-
-        somaDasAvaliacoes += nota;
-        totalDeAvaliacoes++;
+    @Override
+    public int getClassificacao() {
+        return 0;
     }
 
-    double pegaMedia() {
-
-        return somaDasAvaliacoes / totalDeAvaliacoes;
-
+    @Override
+    public String toString() {
+        return "Filme: " + this.getNome()  +  "(" + this.getAnoDeLancamento() + ")";
     }
-
 }
 
